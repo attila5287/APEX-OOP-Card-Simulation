@@ -2,7 +2,7 @@
 
 >object oriented programming with APEX, playing card probability simulation.
 
-## Code will deal the cards and records the outcome for texas hold'em hands in order to calculate poker probabilities
+## Code will deal the cards with the help of Deck object. Then the outcome will be recorded every round. After millions of simulations, probability of poker hands will be calculated. 
 
 - [x]  Card
 - [ ]  Hand
