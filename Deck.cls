@@ -1,3 +1,10 @@
+/* EXECUTE ANONYMOUS 
+System.debug('------ Attila -------');
+Deck.deal(5);
+System.debug('------ Juma   -------');
+Deck.deal(5);
+*/
+
 public with sharing class Deck {
     public static List<String> suits = new List<String>{'♣', '♦', '♥', '♠'};
     public static  List<String> ranks = new List<String>{
@@ -29,5 +36,4 @@ public with sharing class Deck {
         res+=bot;
         System.debug(res);
     }
-
 }
