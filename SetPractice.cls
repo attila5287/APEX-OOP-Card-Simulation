@@ -21,3 +21,8 @@ public class SetPractice {
         return sum;
     }
 }
+// ================================
+// ---- APEX CODE TO RUN EXEC ANON
+// List<Integer> mylist = new List<Integer>{1,2,3,3,4,5,5};
+// System.debug(setPractice.sumOfUniqueV(mylist));
+// ================================
