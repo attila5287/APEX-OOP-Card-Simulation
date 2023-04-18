@@ -210,7 +210,6 @@ public with sharing class apexsandbox {
         } else {
             return false;
         }
-        
     }
     
     public Boolean isPrime(Integer num) {
@@ -269,6 +268,7 @@ public with sharing class apexsandbox {
             return lastName + ', ' + firstName;
         } 
     }
+
     public String nameFromEmail(String email) {
         /* 
             #11 Implement a function nameFromEmail that takes as input a
@@ -328,7 +328,87 @@ public with sharing class apexsandbox {
         }
 
         return res;
-  
     }
+    
+    public Integer fibonacci(Integer n) {
+        // #13 Fibonacci series
+        /*
+            The first two numbers in the fibonacci sequence are 1, and all other numbers in the sequence are defined as the sum of the last two fibonacci numbers. The first 10 numbers in the fibonacci sequence are 1, 1, 2, 3, 5, 8, 13, 21, 34, and 55. Implement the function fibonacci that takes as input an Integer n and returns the nth fibonacci number. Assume that n will always be greater than 0.
+        */
+        if (n==1) {
+            return 1;   
+        } else if (n==2) {
+            return 1;
+        } else {
+            Integer fib_n_2 = 1; // fib(n-2)
+            Integer fib_n_1 = 1; // fib(n-1)
+            Integer fib_n; // fib(n)
+            for (Integer i = 3; i <= n; i++) {
+                fib_n = fib_n_1+fib_n_2; 
+                fib_n_2 = fib_n_1; 
+                fib_n_1 = fib_n; 
+            }
+            return fib_n;
+        }
+    }
+    
+    public Integer nextPrime(Integer num) {
+        // #8
+        /*
+            A prime number is a number greater than 1 that is not evenly 
+            divisible by any number greater than one and smaller than 
+            itself. For example, 13 is a prime number because it is not 
+            evenly divisible by any number from 2 to 12. Implement the 
+            function nextPrime that takes as input an integer num and 
+            returns the smallest prime number greater than num.
+        */
+        Integer res=num+1;         
+        while (!IsPrim3(res)) {
+            res++;
+        }
+        return res;
+    }    
+    public Boolean isPrim3(Integer numb) {
+
+            List<Integer> dividers = new List<Integer>();
+            for (Integer i = 2; i < numb; i++) {
+                if ((Math.mod(numb,i) == 0)) {
+                    dividers.add(i);
+                }   
+            }
+    
+            if (numb<2) {
+                return false;
+            } else if (numb==2) {
+                return true;
+            } else if (dividers.size()>0) {
+                return false;
+            } else {
+                return true;
+            }
+    }
+    
+    public String reverseWordsInASentence(String sentence){
+        // #113
+        /*
+            Implement a function reverseWordsInASentence that will take 
+            a String containing words separated by spaces as an 
+            argument, and return a string with the order of the words 
+            reversed.
+        */
+        if (sentence == null) {
+            return null;
+        }else {
+            
+            List<String> words = new List<String>();
+            words = sentence.split(' ');
+            List<String> res = new List<String>();
+            Integer index = words.size()-1;
+            for (Integer i = 0; i < words.size(); i++) {
+                res.add(words[index-i]);
+            }
+            return String.join(res,' ');
+        }
+    }    
     
 }
